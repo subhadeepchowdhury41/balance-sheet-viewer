@@ -7,20 +7,19 @@ class ApiCollection {
     await ApiCaller.sendGetRequest('available-traded/list').then((response) {
       companies = [...response as List];
     });
-    // print(companies);
-    return companies.getRange(0, 20).toList();
+    // print(companies.length);
+    return companies;
   }
 
-  static Future<Map> getBalanceSheetData(String symbol) async {
-    Map<dynamic, dynamic> sheet = {};
-    print(symbol);
+  static Future<List> getBalanceSheets(String symbol) async {
+    List sheets = [];
+    // print(symbol);
     await ApiCaller.sendGetRequest('balance-sheet-statement/$symbol')
         .then((value) {
-      List sheets = [...value as List];
-      print('sheets --> ${sheets}');
-      sheet = sheets[0] as Map;
+      // print(value);
+      sheets = [...value as List];
+      // print(sheets);
     });
-    print(sheet);
-    return sheet;
+    return sheets;
   }
 }

@@ -16,12 +16,15 @@ class SearchCompany extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 100,
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [Colors.white, Colors.white12],
-              stops: [0.7, 1])),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        gradient: const LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [Colors.white, Colors.white12],
+          stops: [0.7, 1],
+        ),
+      ),
       child: Row(
         children: [
           Expanded(
@@ -31,14 +34,19 @@ class SearchCompany extends StatelessWidget {
               child: SizedBox(
                 height: 50,
                 child: Container(
-                  color: Colors.white,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                  ),
                   child: TextField(
                     controller: _searchCtrl,
                     onChanged: (value) {
                       onChanged(value);
                     },
-                    decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25),
+                        ),
                         hintText: 'Search by Company Name'),
                   ),
                 ),

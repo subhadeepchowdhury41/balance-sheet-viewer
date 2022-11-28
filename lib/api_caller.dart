@@ -9,12 +9,13 @@ class ApiCaller {
   static Future<List?> sendGetRequest(String endPoint) async {
     List? result;
     await http
-        .get(Uri.parse('$_baseUrl$endPoint/?apikey=$_apiKeyM'))
+        .get(Uri.parse('$_baseUrl$endPoint/?apikey=$_apiKey'))
         .then((res) {
       // print(res.body);
       result = json.decode(res.body) as List;
     });
-    print('result --> $result\n');
+    // print('result --> $result\n');
+    // result = [{}, {}, {}, {}, {}];
     return result;
   }
 

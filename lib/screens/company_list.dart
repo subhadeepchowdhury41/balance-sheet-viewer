@@ -30,6 +30,7 @@ class _CompaniesListState extends State<CompaniesList> {
     super.initState();
     _companies = widget.companies;
     _foundComp = _companies;
+    // debugPrint('companies length --> ${_companies.length}\n');
   }
 
   void runSearch(String search) {
@@ -61,26 +62,13 @@ class _CompaniesListState extends State<CompaniesList> {
           },
         ),
         const SizedBox(height: 10),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              GestureDetector(
-                onTap: () {},
-                child: const Chip(
-                  label: Text('IT'),
-                ),
-              ),
-            ],
-          ),
-        ),
         Expanded(
           child: ListView.builder(
             shrinkWrap: true,
             itemCount: _foundComp.length,
             physics: const ScrollPhysics(),
             itemBuilder: (context, index) {
+              print('current comp --> $index');
               return ListTile(
                 leading: CircleAvatar(
                   backgroundColor: Colors.indigo,
