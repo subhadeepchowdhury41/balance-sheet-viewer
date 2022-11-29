@@ -68,7 +68,7 @@ class _CompaniesListState extends State<CompaniesList> {
             itemCount: _foundComp.length,
             physics: const ScrollPhysics(),
             itemBuilder: (context, index) {
-              print('current comp --> $index');
+              // print('current comp --> $index');
               return ListTile(
                 leading: CircleAvatar(
                   backgroundColor: Colors.indigo,

@@ -41,7 +41,7 @@ class _DashboardState extends State<Dashboard> {
             );
           } else {
             if (snapshot.data != null) {
-              // print(snapshot.data);
+              // print(snapshot.data.length);
               return CompaniesList(companies: snapshot.data!);
             } else {
               return const Center(
